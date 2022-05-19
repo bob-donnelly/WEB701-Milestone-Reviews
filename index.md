@@ -30,10 +30,12 @@ I then went over their purpose in the development cycle, mostly their ability to
 I wrote up the proposal as if I was a part of a charity or a contractor writing about what I propose they should go with to help complete the project as best as possible. Taking into account, React experience among the developers i.e., me, how closely it follows MVC architecture, toolsets of each framework, security like updates to the framework regularly so known security risks are patched, and the ability to find pointers to deal with any known issues. To finally choose React over Vue because while Vue is excellent it loses out on some of those metrics.
 
 While I chose React it would not be a bad choice to use Vue even though I did not choose it. 
+
 Vue has lots of upsides and it would be great to use if I had more experience in it. 
 
 #### References
 
 Detailed Web Framework Comparison With Features in 2022. (2021, October 19). https://www.monocubed.com/blog/web-development-framework-comparison/
+
 What is a Web Framework? (2017, July 28). GoodFirms Glossary - GoodFirms. https://www.goodfirms.co/glossary/web-framework/
 
