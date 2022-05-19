@@ -17,3 +17,18 @@ Token has three APIs. The first is receive token, which creates a token in the u
 Lastly there are six APIs for activities, split between activity signup and activities in general. Partners will be able to create activities, update them and delete them from a screen dedicated to them that individuals will not see. There is also an API to get all activities so that we can create a list of events for our homepage and carousel. For four APIs dedicated to seeing activities and managing them.
 
 Activity signup has a method to find an activity so we can bring it up as a pop-up component then an update API for signing up for an activity where clicking “signup” updates the created event by adding a participant then generates a token that updates the individuals account with a reference to the event. These are the last two APIs.
+
+### Milestone Two Review
+
+For milestone two I set out to compare MEVN (MongoDb, Express, Vue and Node) and MERN (MongoDb, Express, React and Node) stacks. Since the backend is the exact same it is just comparing the front end, React vs Vue.
+I compared React and Vue on a theoretical basis on its pros and cons, while React/Vue have different approaches they are both easy to use and customise. They both have long term support, large communities, and documentation. (Detailed Web Framework Comparison With Features in 2022, 2021)
+I gave a quick introduction to what frameworks are and what their common features are like URL mapping, routing, middleware, and what architecture it was made to be used with primarily but not exclusively (MVC).
+I then went over their purpose in the development cycle, mostly their ability to be a scaffold to take care of the routing, middleware and the creation of the server. (‘What Is a Web Framework?’, 2017) This takes many development hours away from making that same scaffolding yourself and you can get on with the business logic which is far more important for interacting with your specific database.
+I wrote up the proposal as if I was a part of a charity or a contractor writing about what I propose they should go with to help complete the project as best as possible. Taking into account, React experience among the developers i.e., me, how closely it follows MVC architecture, toolsets of each framework, security like updates to the framework regularly so known security risks are patched, and the ability to find pointers to deal with any known issues. To finally choose React over Vue because while Vue is excellent it loses out on some of those metrics.
+While I chose React it would not be a bad choice to use Vue even though I did not choose it. Vue has lots of upsides and it would be great to use if I had more experience in it. 
+
+#### References
+
+Detailed Web Framework Comparison With Features in 2022. (2021, October 19). https://www.monocubed.com/blog/web-development-framework-comparison/
+What is a Web Framework? (2017, July 28). GoodFirms Glossary - GoodFirms. https://www.goodfirms.co/glossary/web-framework/
+
