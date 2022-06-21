@@ -39,3 +39,119 @@ Detailed Web Framework Comparison With Features in 2022. (2021, October 19). htt
 
 What is a Web Framework? (2017, July 28). GoodFirms Glossary - GoodFirms. https://www.goodfirms.co/glossary/web-framework/
 
+### Milestone Three Review
+
+For milestone three I started by writing a report about serverless technology namely, serverless technology. I wrote an introduction to serverless technology, how the technology is relevant to the current state of the internet or web technologies, my research methodology/how to implement it in my project. Then I described the impact it has or will have on users from my perspective, lastly I provided a summary of my findings in the conclusion.
+
+I imported all my backend and reactclient code from milestone two (ms2 folder) and updated the dependencies in ms3 and the reactclient folders plus added new ones like concurrently and axios. Concurrently runs the server and the client at the same time with npm run dev and helps to test and use the build. Axios is a routing and data transfer package that replaces fetch from Javascript/React. It makes it easier because JSON is return automatically and can bypass the object: object Javascript error.
+
+I opted to put the functions for the components above the component JSX,  this made the component files quite large but instead of having screens as one component and components as the logic for them to then import one into the other as a composite component for smaller files I elected to have them in one component file in the components folder.
+
+```
+// Home is a component structure example 
+
+const Home = () => {
+
+    return ( 
+        <section>
+        <h1> <h1/>
+            <p>
+            
+            </p>
+        </section>
+    )
+}
+
+// exports the function and since it is the only component we export as default
+
+export default Home
+```
+How the home component is called in the App file.
+```
+// Importing browser router from react router dom for the components
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Importing components from the components folder
+
+import Home from "./Components/home.js";
+
+// Running the application 
+
+const App = () => {
+
+  // returning the component as JSX to display thems on the page
+
+  return (
+
+    // Router from react-router-dom as a wrapper around main
+
+    <Router>
+    <main> 
+      {/* 
+          Routes from react-router-dom which declare a route, 
+          the exact path and the element which is the component for that route 
+      */}
+    <Routes>
+        <Route exact path="/" element={<Home />} />
+        </Routes>
+    </main>
+    </Router>
+
+  );
+}
+
+// Exporting the app as default since it is the only function
+
+export default App;
+```
+As you can see the components use braces {} around code within JSX that compiles down into html to differentiate Javascript from regular html syntax.
+
+I created a registration page which uses react hooks ```import { useRef, useState, useEffect } from "react"; ``` useState, useEffect, and useRef were very helpful as state is used when tracking the changes between valid and invalid usernames, passwords and emails according to my regexor regular expressions.
+```
+// Using regex or regular expressions to filter out unwanted characters or sequences for usernames
+
+const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
+
+ const [username, setUser] = useState('');
+ const [validName, setValidName] = useState(false);
+ const [userFocus, setUserFocus] = useState(false);
+```
+The useRef was helpful for having a reference of current.focus for user to check the mutable value of the fields in my registration and login form.
+```
+    const userRef = useRef();
+    
+        useEffect(() => {
+        userRef.current.focus()
+    }, [])
+
+ <label htmlFor="username">
+                    Username:
+                </label>
+                <input
+                    type="text"
+                    id="username"
+                    ref={userRef} // Referencing the userRef hook to set the focus on the input field
+                 /> // snippet of user to show userRef
+                 
+    useEffect(() => {
+
+    // Checking if the username is valid by testing the regex on the username value input in the field
+
+        setValidName(USER_REGEX.test(username));
+    }, [username])
+```
+As you can see useEffect is great for having the userRef show the current value of the mutable fields and for checking if the username is valid by using our custom state of setValidName to be the user regex we defined above.
+
+Next I added screen reader functionality to the registration form by using the code below to tell the screen reader what to read out in what voice.
+```
+aria-invalid={validPassword ? "false" : "true"} 
+aria-describedby="passwordnote" 
+```
+The biggest part of the code is the handleSubmit function which deals with the data and submits the form onSubmit as a class in the form JSX.
+
+It has the axios data handler function called response uses axios.post to pass a variable = to the server route with the username, email, and password we passed along with the state we need to track login success plus error handling to stop bad usernames, emails and passwords passing.
+
+It changes a bit across registration and login but it is quite similar.
+
+I enjoyed making the login and registration for this app. Interacting between the frontend and backend is quite satisfying.
